@@ -1,8 +1,9 @@
 import React,{useState} from "react";
 import Layout from "../../components/Layout/Layout";
 import axios from "axios"
-import {toast} from "react-toastify"
+import toast from "react-hot-toast"
 import {useNavigate} from "react-router-dom"
+import "../../styles/AuthStyles.css"
 
 const Register = () => {
 
@@ -19,22 +20,22 @@ const Register = () => {
         try {
             const res = await axios.post(`${process.env.REACT_APP_API}/api/v1/auth/register`,{name,email,password,phone,address});
             if(res && res.data.success) {
-                toast.success(res.data.message);
-                navigate("/login")
+                
+                toast.success(res.data.message + ".\nGo to Login Page");
+                //navigate("/login")
             }
             else {
                 toast.error(res.data.message);
             }
         } catch (error) {
             console.log(error);
-            toast.errror("Something went wrong. Try again");
+            toast.error("Something went wrong. Try again");
         }
     }
 
-console.log(process.env.REACT_APP_API)
   return (
     <Layout title="Register - Ecommerce App">
-      <div className="register">
+      <div className="form-container">
         <h1>Register</h1>
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
@@ -101,7 +102,7 @@ console.log(process.env.REACT_APP_API)
             
           </div>
           <button type="submit" className="btn btn-primary">
-            Submit
+            REGISTER
           </button>
         </form>
       </div>
