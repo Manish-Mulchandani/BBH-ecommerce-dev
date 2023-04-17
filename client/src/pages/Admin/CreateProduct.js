@@ -1,6 +1,6 @@
-import React from 'react'
-import Layout from '../../components/Layout/Layout'
-import AdminMenu from '../../components/Layout/AdminMenu'
+import React from "react";
+import Layout from "../../components/Layout/Layout";
+import AdminMenu from "../../components/Layout/AdminMenu";
 
 const CreateProduct = () => {
   return (
@@ -16,7 +16,7 @@ const CreateProduct = () => {
         </div>
       </div>
     </Layout>
-  )
-}
+  );
+};
 
-export default CreateProduct
+export default CreateProduct;
