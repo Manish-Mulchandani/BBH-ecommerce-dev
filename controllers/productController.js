@@ -231,11 +231,11 @@ export const productListController = async (req, res) => {
       .limit(perPage)
       .sort({ createdAt: -1 });
     res.status(200).send({
-        success: true,
-        products,
+      success: true,
+      products,
     });
   } catch (error) {
-    console.log(error);  
+    console.log(error);
     res.status(400).send({
       message: "Error in per page ctrl",
       error,
@@ -244,35 +244,41 @@ export const productListController = async (req, res) => {
   }
 };
 
-// search product 
-export const searchProductController = async (req,res) => {
+// search product
+export const searchProductController = async (req, res) => {
   try {
-    const {keyword} = req.params
-    const result = await productModel.find({
-      $or:[
-        {name:{$regex:keyword, $options:"i"}},
-        {description:{$regex:keyword, $options:"i"}},
-      ]
-    }).select("-photo")
+    const { keyword } = req.params;
+    const result = await productModel
+      .find({
+        $or: [
+          { name: { $regex: keyword, $options: "i" } },
+          { description: { $regex: keyword, $options: "i" } },
+        ],
+      })
+      .select("-photo");
     res.json(result);
   } catch (error) {
     console.log(error);
     res.status(400).send({
-      success:false,
+      success: false,
       message: "Error in search product api",
       error,
     });
   }
-}
+};
 
-// similar product 
-export const relatedProductController = async (req,res) => {
+// similar product
+export const relatedProductController = async (req, res) => {
   try {
-    const {pid,cid} = req.params
-    const products = await productModel.find({
-      category: cid,
-      _id:{$ne:pid},
-    }).select("-photo").limit(3).populate("category");
+    const { pid, cid } = req.params;
+    const products = await productModel
+      .find({
+        category: cid,
+        _id: { $ne: pid },
+      })
+      .select("-photo")
+      .limit(3)
+      .populate("category");
     res.status(200).send({
       success: true,
       products,
@@ -280,9 +286,9 @@ export const relatedProductController = async (req,res) => {
   } catch (error) {
     console.log(error);
     res.status(400).send({
-      success:false,
+      success: false,
       message: "Error in getting related product",
       error,
     });
   }
-}
+};

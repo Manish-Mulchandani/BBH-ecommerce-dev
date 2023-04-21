@@ -6,7 +6,7 @@ import { Prices } from "../components/Prices";
 import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [checked, setChecked] = useState([]);
@@ -164,13 +164,15 @@ const HomePage = () => {
                     {p.description.substring(0, 30)}...
                   </p>
                   <p className="card-text">₹ {p.price}</p>
-                  
-                  <button class="btn btn-secondary md-1" onClick={()=>navigate(`/product/${p.slug}`)}>More Details</button>
-                  <button class="btn btn-primary md-1">
-                    ADD TO CART
+
+                  <button
+                    class="btn btn-secondary md-1"
+                    onClick={() => navigate(`/product/${p.slug}`)}
+                  >
+                    More Details
                   </button>
+                  <button class="btn btn-primary md-1">ADD TO CART</button>
                 </div>
-                
               </div>
             ))}
           </div>
