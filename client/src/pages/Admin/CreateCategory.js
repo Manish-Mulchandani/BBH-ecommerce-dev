@@ -80,7 +80,7 @@ const CreateCategory = () => {
       const { data } = await axios.delete(
         `${process.env.REACT_APP_API}/api/v1/category/delete-category/${pId}`
       );
-      if (data.success) {
+      if (data?.success) {
         toast.success(`Category is deleted`);
         getAllCategory();
       } else {
@@ -88,12 +88,13 @@ const CreateCategory = () => {
       }
     } catch (error) {
       toast.error("Something went wrong");
+      console.log(error)
     }
   };
 
   return (
     <Layout title={"Dashboard - Create Category"}>
-      <div className="container-fluid m-3 p-3">
+      <div className="container-fluid m-3 p-3 dashboard">
         <div className="row">
           <div className="col-md-3">
             <AdminMenu />

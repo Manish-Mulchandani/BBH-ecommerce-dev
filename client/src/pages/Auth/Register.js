@@ -23,7 +23,7 @@ const Register = () => {
         { name, email, password, phone, address, answer }
       );
       if (res && res.data.success) {
-        toast.success(res.data.message + ".\nGo to Login Page");
+        toast.success(res.data && res.data.message + ".\nGo to Login Page");
         //navigate("/login")
       } else {
         toast.error(res.data.message);
@@ -36,9 +36,10 @@ const Register = () => {
 
   return (
     <Layout title="Register - Ecommerce App">
-      <div className="form-container">
-        <h1>Register</h1>
+      <div className="form-container" style={{minHeight:"90vh"}}>
+        
         <form onSubmit={handleSubmit}>
+        <h2 className="title">Register</h2>
           <div className="mb-3">
             <input
               type="text"
@@ -48,6 +49,7 @@ const Register = () => {
               id="exampleInputEmail1"
               placeholder="Enter your Name"
               required
+              autoFocus
             />
           </div>
           <div className="mb-3">

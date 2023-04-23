@@ -22,7 +22,7 @@ const Login = () => {
         { email, password }
       );
       if (res && res.data.success) {
-        toast.success(res.data.message + ".\nGo to Home Page");
+        toast.success(res.data && res.data.message + ".\nGo to Home Page");
         setAuth({
           ...auth,
           user: res.data.user,
@@ -41,12 +41,14 @@ const Login = () => {
 
   return (
     <Layout title="Register - Ecommerce App">
-      <div className="form-container">
-        <h1>Login</h1>
+      <div className="form-container" style={{minHeight:"90vh"}}>
+        
         <form onSubmit={handleSubmit}>
+        <h2 className="title">Login</h2>
           <div className="mb-3">
             <input
               type="email"
+              autoFocus
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="form-control"
@@ -70,7 +72,7 @@ const Login = () => {
           <div className="mb-3">
             <button
               type="button"
-              className="btn btn-primary"
+              className="btn forgot-btn"
               onClick={() => {
                 navigate("/forgot-password");
               }}

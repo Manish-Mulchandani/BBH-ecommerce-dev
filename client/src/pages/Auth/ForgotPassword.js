@@ -20,7 +20,7 @@ const ForgotPassword = () => {
         { email, newPassword, answer }
       );
       if (res && res.data.success) {
-        toast.success(res.data.message + ".\nGo to Home Page");
+        toast.success(res.data && res.data.message + ".\nGo to Home Page");
 
         navigate("/login");
       } else {
@@ -32,10 +32,11 @@ const ForgotPassword = () => {
     }
   };
   return (
-    <Layout title="Register-Ecommerce App">
+    <Layout title="Forgot Password-Ecommerce App">
       <div className="form-container">
-        <h1>RESET PASSWORD</h1>
+        
         <form onSubmit={handleSubmit}>
+        <h2 className="title">RESET PASSWORD</h2>
           <div className="mb-3">
             <input
               type="email"

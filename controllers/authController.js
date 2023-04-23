@@ -142,7 +142,13 @@ export const forgotPasswordController = async (req, res) => {
 
 // test controller
 export const testController = (req, res) => {
-  res.send("Protected Route");
+  try {
+    res.send("Protected Route");
+  } catch (error) {
+    console.log(error)
+    res.send({error})
+  }
+  
 };
 
 // updateProfileController
@@ -212,6 +218,27 @@ export const getAllOrdersController = async (req, res) => {
     res.status(500).send({
       success: false,
       message: "Error while Getting orders",
+      error,
+    });
+  }
+};
+
+//order status
+export const orderStatusController = async (req, res) => {
+  try {
+    const { orderId } = req.params;
+    const { status } = req.body;
+    const orders = await orderModel.findByIdAndUpdate(
+      orderId,
+      { status },
+      { new: true }
+    );
+    res.json(orders);
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({
+      success: false,
+      message: "Error while Updating order",
       error,
     });
   }
