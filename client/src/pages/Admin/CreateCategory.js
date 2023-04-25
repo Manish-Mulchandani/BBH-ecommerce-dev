@@ -60,7 +60,7 @@ const CreateCategory = () => {
         `${process.env.REACT_APP_API}/api/v1/category/update-category/${selected._id}`,
         { name: updatedName }
       );
-      if (data.success) {
+      if (data?.success) {
         toast.success(`${updatedName} is updated`);
         setSelected(null);
         setUpdatedName("");
@@ -71,6 +71,7 @@ const CreateCategory = () => {
       }
     } catch (error) {
       toast.error("Something went wrong");
+      console.log(error)
     }
   };
 
