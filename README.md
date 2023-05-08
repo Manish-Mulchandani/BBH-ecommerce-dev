@@ -22,7 +22,7 @@ Category Page
 ![Screenshot from 2023-05-08 17-27-29](https://user-images.githubusercontent.com/56696028/236820595-10f17393-e90e-4863-b94e-047e76b0f37f.png)
 
 
-#Admin Panel
+# Admin Panel
 
 Manage Category
 
@@ -41,7 +41,7 @@ Orders Page
 ![Screenshot from 2023-05-08 17-32-47](https://user-images.githubusercontent.com/56696028/236821379-8878590a-d7a8-4cb0-99d5-1ca3af3b5f0c.png)
 
 
-#User Panel 
+# User Panel 
 
 My Orders
 
