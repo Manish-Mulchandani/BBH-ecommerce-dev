@@ -1,5 +1,19 @@
 # BBH-ecommerce-dev
 
+### WebApp Hosted Link
+https://long-red-tadpole-robe.cyclic.app/
+
+### How to run this Web-App locally
+1. Install NodeJS and NPM
+2. In the root directory, perform "npm install"
+3. In the client directory, perform "npm install"
+4. Create a .env file in the root directory and add these values below :-
+  1. PORT = 8080
+  2. DEV_MODE = development
+  3. MONGO_URL = { Enter your MongoDB URL }
+  4. JWT_SECRET = { Enter some random secret value }
+  5. BRAINTREE_MERCHANT_ID, BRAINTREE_PUBLIC_KEY, BRAINTREE_PRIVATE_KEY from { Braintree }
+
 # Preview of the WebApp  
 
 Navbar
