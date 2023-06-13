@@ -9,12 +9,12 @@ For users access :- email: user@user.com  password: 123456
 1. Install NodeJS and NPM
 2. In the root directory, perform "npm install"
 3. In the client directory, perform "npm install"
-4. Create a .env file in the root directory and add these values below :-
-PORT = 8080
-DEV_MODE = development
-MONGO_URL = { Enter your MongoDB URL }
-JWT_SECRET = { Enter some random secret value }
-BRAINTREE_MERCHANT_ID, BRAINTREE_PUBLIC_KEY, BRAINTREE_PRIVATE_KEY from { Braintree }
+4. Create a .env file in the root directory and add these values below :-   
+PORT = 8080   
+DEV_MODE = development   
+MONGO_URL = { Enter your MongoDB URL }   
+JWT_SECRET = { Enter some random secret value }   
+BRAINTREE_MERCHANT_ID, BRAINTREE_PUBLIC_KEY, BRAINTREE_PRIVATE_KEY from { Braintree }   
 
 # Preview of the WebApp  
 
