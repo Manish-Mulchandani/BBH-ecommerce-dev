@@ -2,7 +2,7 @@
 
 ### WebApp Hosted Link
 https://long-red-tadpole-robe.cyclic.app/   
-For admin access :- email: admin@admin.com  password: 123456
+For admin access :- email: admin@admin.com  password: 123456   
 For users access :- email: user@user.com  password: 123456
 
 ### How to run this Web-App locally
